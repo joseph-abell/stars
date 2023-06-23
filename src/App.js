@@ -45,6 +45,14 @@ const App = ()  => {
     return `${year}${month}${day}`;
   };
 
+  const getHumanReadableDate = (date) => {
+    const year = date.slice(0, 4);
+    const month = date.slice(4, 6);
+    const day = date.slice(6, 8);
+
+    return `${day}-${month}-${year}`;
+  };
+
   const toggleStar = (index) => {
     const newStars = [...stars];
     newStars[index] = !newStars[index];
@@ -56,7 +64,7 @@ const App = ()  => {
     <aside>
       {allStars.length > 0 && allStars.sort((a, b) => b.date - a.date).map((star) => (
         <div key={star.data} className='star-history-item'>
-          <h3>{star.data}</h3>
+          <h3>{getHumanReadableDate(star.data)}</h3>
 
           {star.stars.map((star, index) => (
             <span
