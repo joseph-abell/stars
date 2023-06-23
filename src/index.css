@@ -5,9 +5,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #111;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+  width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  float:left;
+  margin-right: 25vw;
+}
+
+.star {
+  font-size: 200px;
+  cursor: pointer;
+}
+
+aside {
+  color: gold;
+}
+
+.star-history {
+  font-size: 20px;
+}
+
+.star-history-item {
+  display: flex;
+  width: 20vw;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
