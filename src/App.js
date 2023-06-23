@@ -39,10 +39,10 @@ const App = ()  => {
   const getFormattedDate = () => {
     const date = new Date();
     const year = date.getFullYear();
-    const month = date.getMonth() + 1; // month is 0-indexed
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // month is 0-indexed
     const day = date.getDate();
 
-    return `${year}-${month}-${day}`;
+    return `${year}${month}${day}`;
   };
 
   const toggleStar = (index) => {
@@ -54,8 +54,7 @@ const App = ()  => {
   return (
     <div>
     <aside>
-      <h2>Star History</h2>
-      {allStars.length > 0 && allStars.map((star) => (
+      {allStars.length > 0 && allStars.sort((a, b) => b.date - a.date).map((star) => (
         <div key={star.data} className='star-history-item'>
           <h3>{star.data}</h3>
 
