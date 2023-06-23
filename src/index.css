@@ -9,14 +9,14 @@ body {
 }
 
 main {
-  width: 600px;
+  width: 400px;
   display: flex;
   justify-content: space-evenly;
   margin-right: 25vw;
 }
 
 .star {
-  font-size: 200px;
+  font-size: 100px;
   cursor: pointer;
 }
 
