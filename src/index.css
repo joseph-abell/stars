@@ -30,7 +30,7 @@ aside {
 
 .star-history-item {
   display: flex;
-  width: 20vw;
+  width: 400px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
