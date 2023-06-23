@@ -53,18 +53,6 @@ const App = ()  => {
 
   return (
     <div>
-    <main>
-      {stars.length > 0 && stars.map((star, index) => (
-        <span
-          className='star'
-          key={index}
-          onClick={() => toggleStar(index)}
-          style={{ color: star ? "gold" : "grey" }}
-        >
-          ★
-        </span>  
-      ))}
-    </main>
     <aside>
       <h2>Star History</h2>
       {allStars.length > 0 && allStars.map((star) => (
@@ -83,6 +71,18 @@ const App = ()  => {
         </div>
       ))}
     </aside>
+    <main>
+      {stars.length > 0 && stars.map((star, index) => (
+        <span
+          className='star'
+          key={index}
+          onClick={() => toggleStar(index)}
+          style={{ color: star ? "gold" : "grey" }}
+        >
+          ★
+        </span>  
+      ))}
+    </main>
     </div>
   );
 }

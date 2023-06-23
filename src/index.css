@@ -13,6 +13,7 @@ main {
   display: flex;
   justify-content: space-evenly;
   margin-right: 25vw;
+  height: 20vh;
 }
 
 .star {
@@ -22,6 +23,7 @@ main {
 
 aside {
   color: gold;
+  height: 80vh;
 }
 
 .star-history {
