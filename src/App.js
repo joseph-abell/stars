@@ -62,7 +62,7 @@ const App = ()  => {
   return (
     <div>
     <aside>
-      {allStars.length > 0 && allStars.sort((a, b) => b.date - a.date).map((star) => (
+      {allStars.length > 0 && allStars.sort((a, b) => a.date - b.date).map((star) => (
         <div key={star.data} className='star-history-item'>
           <span>{getHumanReadableDate(star.data)}</span>
 
