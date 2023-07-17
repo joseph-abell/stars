@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const App = ()  => {
   const [allStars, setAllStars] = useState([]);
   const [stars, setStars] = useState([]);
+  const [showHistory, setShowHistory] = useState(false);
   
   // get star information from local storage
   useEffect(() => {
@@ -61,35 +62,41 @@ const App = ()  => {
 
   return (
     <div>
-    <aside>
-      {allStars.length > 0 && allStars.sort((a, b) => a.date - b.date).map((star) => (
-        <div key={star.data} className='star-history-item'>
-          <span>{getHumanReadableDate(star.data)}</span>
+      <button style={{position: 'absolute', right: '10px', top: '10px', zIndex: '2'}} onClick={() => setShowHistory(!showHistory)}>History</button>
+      {showHistory && (
+        <aside>
+          {allStars.length > 0 && allStars.sort((a, b) => a.date - b.date).map((star) => (
+            <div key={star.data} className='star-history-item'>
+              <span>{getHumanReadableDate(star.data)}</span>
 
-          {star.stars.map((star, index) => (
-            <span
-              className='star-history'
-              key={index}
-              style={{ color: star ? "gold" : "grey" }}
-            >
-              ★
-            </span>
+              {star.stars.map((star, index) => (
+                <span
+                  className='star-history'
+                  key={index}
+                  style={{ color: star ? "gold" : "grey" }}
+                >
+                  ★
+                </span>
+              ))}
+            </div>
           ))}
-        </div>
-      ))}
-    </aside>
-    <main>
-      {stars.length > 0 && stars.map((star, index) => (
-        <span
-          className='star'
-          key={index}
-          onClick={() => toggleStar(index)}
-          style={{ color: star ? "gold" : "grey" }}
-        >
-          ★
-        </span>  
-      ))}
-    </main>
+        </aside>
+      )}
+    
+    {!showHistory && (
+      <main>
+        {stars.length > 0 && stars.map((star, index) => (
+          <span
+            className='star'
+            key={index}
+            onClick={() => toggleStar(index)}
+            style={{ color: star ? "gold" : "grey" }}
+          >
+            ★
+          </span>  
+        ))}
+      </main>  
+    )}
     </div>
   );
 }
