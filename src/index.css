@@ -11,6 +11,11 @@ body {
   overflow: hidden;
 }
 
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+
 main {
   width: 400px;
   display: flex;
